@@ -7,7 +7,7 @@ package proyecto1_201602491;
 
 /**
  *
- * @author W7-JUEGOS
+ * @author Carlos Luna
  */
 public class Error1 extends javax.swing.JFrame {
 
