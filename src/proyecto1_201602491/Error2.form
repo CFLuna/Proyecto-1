@@ -39,7 +39,7 @@
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                   <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                      <Component id="btnError2" min="-2" pref="100" max="-2" attributes="0"/>
+                      <Component id="btnOk2" min="-2" pref="100" max="-2" attributes="0"/>
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -64,7 +64,7 @@
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="btnError2" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="btnOk2" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -79,7 +79,7 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Imagenes/Error.png"/>
+          <Image iconType="3" name="/Imagenes/navi.png"/>
         </Property>
       </Properties>
     </Component>
@@ -107,15 +107,15 @@
         <Property name="text" type="java.lang.String" value="a crear su usuario."/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnError2">
+    <Component class="javax.swing.JButton" name="btnOk2">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial" size="14" style="0"/>
+          <Font name="Arial" size="11" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="OK"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnError2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOk2ActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

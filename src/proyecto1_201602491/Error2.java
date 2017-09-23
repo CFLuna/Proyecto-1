@@ -32,7 +32,7 @@ public class Error2 extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        btnError2 = new javax.swing.JButton();
+        btnOk2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Error");
@@ -40,7 +40,7 @@ public class Error2 extends javax.swing.JFrame {
         setResizable(false);
         setSize(new java.awt.Dimension(459, 158));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Error.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/navi.png"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel2.setText("El usuario no existe, por favor dirijase a");
@@ -51,11 +51,11 @@ public class Error2 extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setText("a crear su usuario.");
 
-        btnError2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btnError2.setText("OK");
-        btnError2.addActionListener(new java.awt.event.ActionListener() {
+        btnOk2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnOk2.setText("OK");
+        btnOk2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnError2ActionPerformed(evt);
+                btnOk2ActionPerformed(evt);
             }
         });
 
@@ -71,7 +71,7 @@ public class Error2 extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jLabel4)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(btnError2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnOk2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel3)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -91,7 +91,7 @@ public class Error2 extends javax.swing.JFrame {
                                 .addComponent(jLabel4))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnError2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(btnOk2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(jLabel1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -99,9 +99,9 @@ public class Error2 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnError2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnError2ActionPerformed
+    private void btnOk2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOk2ActionPerformed
         this.setVisible(false);
-    }//GEN-LAST:event_btnError2ActionPerformed
+    }//GEN-LAST:event_btnOk2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -139,7 +139,7 @@ public class Error2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnError2;
+    private javax.swing.JButton btnOk2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
