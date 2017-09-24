@@ -39,6 +39,7 @@ public class UsuarioAdministrador extends javax.swing.JFrame {
         btnVerBiblio = new javax.swing.JButton();
 
         setTitle("Administrador");
+        setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel1.setText("Usuarios:");
