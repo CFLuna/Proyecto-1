@@ -45,6 +45,7 @@ public class CrearUsuario extends javax.swing.JFrame {
         txtPassUser1 = new javax.swing.JPasswordField();
         txtPassUser2 = new javax.swing.JPasswordField();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Crear Usuario");
         setResizable(false);
 

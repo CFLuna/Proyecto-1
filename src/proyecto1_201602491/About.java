@@ -33,6 +33,7 @@ public class About extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         labelAbout1 = new javax.swing.JLabel();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setLocation(new java.awt.Point(220, 220));
         setResizable(false);
 

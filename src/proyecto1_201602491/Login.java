@@ -37,6 +37,7 @@ public class Login extends javax.swing.JFrame {
         btnCancelar = new javax.swing.JButton();
         txtContraseña = new javax.swing.JPasswordField();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Login");
         setLocation(new java.awt.Point(250, 150));
         setResizable(false);
