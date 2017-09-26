@@ -8,7 +8,8 @@ import javax.swing.JLabel;
  * @author Carlos Luna
  */
 public class MenuP extends javax.swing.JFrame {
-
+    Usuario usuarios[]= new Usuario[50];
+    Bibliografia bibliografia[] = new Bibliografia[50];
     /**
      * Creates new form MenuP
      */
@@ -209,6 +210,7 @@ public class MenuP extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
        Login login = new Login();
+      // login.usuarios = usuarios;
     }//GEN-LAST:event_btnLoginActionPerformed
 
     /**

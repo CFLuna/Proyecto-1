@@ -16,6 +16,7 @@ public class CrearBibliografia extends javax.swing.JFrame {
      */
     public CrearBibliografia() {
         initComponents();
+        this.setVisible(true);
     }
 
     /**
@@ -39,9 +40,19 @@ public class CrearBibliografia extends javax.swing.JFrame {
 
         btnCargaMasiva.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnCargaMasiva.setText("Carga Masiva");
+        btnCargaMasiva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCargaMasivaActionPerformed(evt);
+            }
+        });
 
         btnCargaIndividual1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnCargaIndividual1.setText("Carga Individual");
+        btnCargaIndividual1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCargaIndividual1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -50,8 +61,8 @@ public class CrearBibliografia extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(87, 87, 87)
                 .addComponent(btnCargaMasiva, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
-                .addComponent(btnCargaIndividual1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
+                .addComponent(btnCargaIndividual1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(69, 69, 69))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -72,6 +83,14 @@ public class CrearBibliografia extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCargaMasivaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargaMasivaActionPerformed
+        CargaMasiva cargamasiva = new CargaMasiva();
+    }//GEN-LAST:event_btnCargaMasivaActionPerformed
+
+    private void btnCargaIndividual1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargaIndividual1ActionPerformed
+        CargaIndividual cargaindividual = new CargaIndividual();
+    }//GEN-LAST:event_btnCargaIndividual1ActionPerformed
 
     /**
      * @param args the command line arguments

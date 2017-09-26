@@ -16,6 +16,7 @@ public class UsuarioNormal extends javax.swing.JFrame {
      */
     public UsuarioNormal() {
         initComponents();
+        this.setVisible(true);
     }
 
     /**

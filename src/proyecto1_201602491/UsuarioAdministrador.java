@@ -10,12 +10,13 @@ package proyecto1_201602491;
  * @author W7-JUEGOS
  */
 public class UsuarioAdministrador extends javax.swing.JFrame {
-
+  // public Usuario usuarios[];
     /**
      * Creates new form UsuarioAdministrador
      */
     public UsuarioAdministrador() {
         initComponents();
+        this.setVisible(true);
     }
 
     /**
@@ -40,6 +41,7 @@ public class UsuarioAdministrador extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Administrador");
+        setLocation(new java.awt.Point(250, 150));
         setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -50,24 +52,54 @@ public class UsuarioAdministrador extends javax.swing.JFrame {
 
         btnCrearUser.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnCrearUser.setText("Crear");
+        btnCrearUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrearUserActionPerformed(evt);
+            }
+        });
 
         btnCrearBiblio.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnCrearBiblio.setText("Crear");
+        btnCrearBiblio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrearBiblioActionPerformed(evt);
+            }
+        });
 
         btnModificarUser.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnModificarUser.setText("Modificar");
+        btnModificarUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarUserActionPerformed(evt);
+            }
+        });
 
         btnModificarBiblio.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnModificarBiblio.setText("Modificar");
+        btnModificarBiblio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarBiblioActionPerformed(evt);
+            }
+        });
 
         btnEliminarUser.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnEliminarUser.setText("Eliminar");
+        btnEliminarUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarUserActionPerformed(evt);
+            }
+        });
 
         btnEliminarBiblio.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnEliminarBiblio.setText("Eliminar");
 
         btnVerUser.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnVerUser.setText("Ver");
+        btnVerUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerUserActionPerformed(evt);
+            }
+        });
 
         btnVerBiblio.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnVerBiblio.setText("Ver");
@@ -130,6 +162,32 @@ public class UsuarioAdministrador extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCrearUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearUserActionPerformed
+        CrearUsuario crearuser = new CrearUsuario();
+       // crearuser.usuarios = usuarios;
+        Login.print();
+    }//GEN-LAST:event_btnCrearUserActionPerformed
+
+    private void btnModificarUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarUserActionPerformed
+        ModificarUsuario modificaruser = new ModificarUsuario();
+    }//GEN-LAST:event_btnModificarUserActionPerformed
+
+    private void btnEliminarUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarUserActionPerformed
+        EliminarUsuario eliminaruser = new EliminarUsuario();
+    }//GEN-LAST:event_btnEliminarUserActionPerformed
+
+    private void btnVerUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerUserActionPerformed
+        VerUsuario veruser = new VerUsuario();
+    }//GEN-LAST:event_btnVerUserActionPerformed
+
+    private void btnCrearBiblioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearBiblioActionPerformed
+        CrearBibliografia crearbiblio = new CrearBibliografia();
+    }//GEN-LAST:event_btnCrearBiblioActionPerformed
+
+    private void btnModificarBiblioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarBiblioActionPerformed
+        //ModificarBibliografia modificarbiblio = new ModificarBibliografia();
+    }//GEN-LAST:event_btnModificarBiblioActionPerformed
 
     /**
      * @param args the command line arguments

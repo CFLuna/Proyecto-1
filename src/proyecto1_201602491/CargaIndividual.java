@@ -16,6 +16,7 @@ public class CargaIndividual extends javax.swing.JFrame {
      */
     public CargaIndividual() {
         initComponents();
+        this.setVisible(true);
     }
 
     /**
@@ -126,6 +127,11 @@ public class CargaIndividual extends javax.swing.JFrame {
 
         btnCargarIndividual.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnCargarIndividual.setText("Cargar");
+        btnCargarIndividual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCargarIndividualActionPerformed(evt);
+            }
+        });
 
         btnCancelarIndividual.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnCancelarIndividual.setText("Cancelar");
@@ -239,6 +245,20 @@ public class CargaIndividual extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCargarIndividualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarIndividualActionPerformed
+        Bibliografia new_bibliografia = new Bibliografia();
+        new_bibliografia.autor = txtAutorCargaI.getText();
+        new_bibliografia.titulo = txtTituloCargaI.getText();
+        new_bibliografia.area = txtAreaCargaI.getText();
+        new_bibliografia.descripcion = txtDescripcionCargaI.getText();
+        new_bibliografia.palabrasclave = txtPalabraClaveCargaI.getText();
+        new_bibliografia.copias = txtCopiasCargaI.getText();
+        new_bibliografia.temas = txtTemasCargaI.getText();
+        new_bibliografia.edicion = txtEdicionCargaI.getText();
+        new_bibliografia.ejemplares = txtEjemplaresCargaI.getText();
+               
+    }//GEN-LAST:event_btnCargarIndividualActionPerformed
 
     /**
      * @param args the command line arguments

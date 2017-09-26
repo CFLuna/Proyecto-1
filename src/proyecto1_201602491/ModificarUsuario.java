@@ -16,6 +16,7 @@ public class ModificarUsuario extends javax.swing.JFrame {
      */
     public ModificarUsuario() {
         initComponents();
+        this.setVisible(true);
     }
 
     /**

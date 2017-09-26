@@ -10,12 +10,19 @@ package proyecto1_201602491;
  * @author W7-JUEGOS
  */
 public class CrearUsuario extends javax.swing.JFrame {
-
+   // Usuario usuarios[];
+    //int contador = 0;
+    
     /**
      * Creates new form CrearUsuario
      */
     public CrearUsuario() {
         initComponents();
+        this.setVisible(true);
+    }
+    
+    public static void almacenaruser(){
+        
     }
 
     /**
@@ -75,6 +82,11 @@ public class CrearUsuario extends javax.swing.JFrame {
 
         btnCrearUser1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnCrearUser1.setText("Crear");
+        btnCrearUser1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrearUser1ActionPerformed(evt);
+            }
+        });
 
         btnCancelarUser.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnCancelarUser.setText("Cancelar");
@@ -177,6 +189,25 @@ public class CrearUsuario extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCrearUser1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearUser1ActionPerformed
+      /* if(txtPassUser1.getText().equals(txtPassUser2.getText())){
+            Usuario new_usuario = new Usuario();
+            // llenar datos
+            new_usuario.nombre = txtNombreUser.getText();
+            new_usuario.apellido = txtApellidoUser.getText();
+            new_usuario.id = txtIdUser.getText();
+            new_usuario.contraseña = txtPassUser1.getText();
+            new_usuario.rol = txtRolUser.getText();
+            new_usuario.user = txtUserUser.getText();
+            //
+            usuarios[contador] = new_usuario;
+            contador++;
+        }else{
+            System.out.println("Contraseñas diferentes");
+        }*/
+       
+    }//GEN-LAST:event_btnCrearUser1ActionPerformed
 
     /**
      * @param args the command line arguments

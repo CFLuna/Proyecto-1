@@ -12,6 +12,7 @@ package proyecto1_201602491;
 public class Login extends javax.swing.JFrame {
     String useradmin="admin";
     String passadmin="admin";
+   // public Usuario usuarios[];
     /**
      * Creates new form Login
      */
@@ -20,6 +21,10 @@ public class Login extends javax.swing.JFrame {
         this.setVisible(true);
     }
     
+    public static void print(){
+        System.out.println("la prueba maestra");
+    }
+        
      /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -129,9 +134,24 @@ public class Login extends javax.swing.JFrame {
         String usuario1 = txtContraseña.getText();
         String contraseña1 = txtContraseña.getText();
         if(contraseña1.equals(passadmin) && usuario1.equals(useradmin)){
-            Error1 error1 = new Error1();
-            System.out.println("Log");
-        }
+            UsuarioAdministrador admin = new UsuarioAdministrador();
+            //admin.usuarios = usuarios;
+            System.out.println("Loged as admin");
+            this.setVisible(false);         
+        }/*else if(usuarios[0]!=null){
+            int contador = 0;
+            boolean encontrado;
+            while(usuarios[contador]!=null){
+                Usuario actual_user = usuarios[contador];
+                if(actual_user.nombre.equals(usuario1)&&actual_user.contraseña.equals(contraseña1)){
+                    UsuarioNormal admin = new UsuarioNormal();
+                    System.out.println("Loged as user");
+                    this.setVisible(false);   
+                    break;
+                }
+                contador++;
+            }
+        }*/
         else{
             Error2 error2 = new Error2();
         }

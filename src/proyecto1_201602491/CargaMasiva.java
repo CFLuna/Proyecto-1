@@ -16,6 +16,7 @@ public class CargaMasiva extends javax.swing.JFrame {
      */
     public CargaMasiva() {
         initComponents();
+        this.setVisible(true);
     }
 
     /**

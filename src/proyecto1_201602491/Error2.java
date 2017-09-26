@@ -36,6 +36,7 @@ public class Error2 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Error");
+        setLocation(new java.awt.Point(350, 220));
         setPreferredSize(null);
         setResizable(false);
         setSize(new java.awt.Dimension(459, 158));
