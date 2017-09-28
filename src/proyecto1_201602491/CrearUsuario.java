@@ -5,6 +5,8 @@
  */
 package proyecto1_201602491;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author W7-JUEGOS
@@ -16,6 +18,8 @@ public class CrearUsuario extends javax.swing.JFrame {
     /**
      * Creates new form CrearUsuario
      */
+    public Usuario usuario;
+    
     public CrearUsuario() {
         initComponents();
         this.setVisible(true);
@@ -48,9 +52,9 @@ public class CrearUsuario extends javax.swing.JFrame {
         txtNombreUser = new javax.swing.JTextField();
         txtApellidoUser = new javax.swing.JTextField();
         txtUserUser = new javax.swing.JTextField();
-        txtRolUser = new javax.swing.JTextField();
         txtPassUser1 = new javax.swing.JPasswordField();
         txtPassUser2 = new javax.swing.JPasswordField();
+        txtRolUser = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Crear Usuario");
@@ -90,6 +94,11 @@ public class CrearUsuario extends javax.swing.JFrame {
 
         btnCancelarUser.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnCancelarUser.setText("Cancelar");
+        btnCancelarUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarUserActionPerformed(evt);
+            }
+        });
 
         txtIdUser.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
@@ -100,11 +109,12 @@ public class CrearUsuario extends javax.swing.JFrame {
 
         txtUserUser.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
-        txtRolUser.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-
         txtPassUser1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
         txtPassUser2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+
+        txtRolUser.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtRolUser.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "UsuarioNormal" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -126,13 +136,12 @@ public class CrearUsuario extends javax.swing.JFrame {
                                     .addComponent(jLabel5)
                                     .addComponent(jLabel6))
                                 .addGap(41, 41, 41)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtRolUser, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtUserUser, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtApellidoUser, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(txtIdUser)
-                                        .addComponent(txtNombreUser, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtUserUser, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                                    .addComponent(txtApellidoUser, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                                    .addComponent(txtIdUser)
+                                    .addComponent(txtNombreUser, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                                    .addComponent(txtRolUser, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addComponent(txtPassUser2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(txtPassUser1, javax.swing.GroupLayout.Alignment.LEADING)
@@ -166,16 +175,16 @@ public class CrearUsuario extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(txtUserUser, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(txtRolUser, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtRolUser))
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jLabel8))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 61, Short.MAX_VALUE)
+                        .addGap(0, 60, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnCrearUser1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnCancelarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -191,23 +200,29 @@ public class CrearUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCrearUser1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearUser1ActionPerformed
-      /* if(txtPassUser1.getText().equals(txtPassUser2.getText())){
-            Usuario new_usuario = new Usuario();
-            // llenar datos
-            new_usuario.nombre = txtNombreUser.getText();
-            new_usuario.apellido = txtApellidoUser.getText();
-            new_usuario.id = txtIdUser.getText();
-            new_usuario.contraseña = txtPassUser1.getText();
-            new_usuario.rol = txtRolUser.getText();
-            new_usuario.user = txtUserUser.getText();
-            //
-            usuarios[contador] = new_usuario;
-            contador++;
-        }else{
-            System.out.println("Contraseñas diferentes");
-        }*/
-       
+        if(txtPassUser1.getText().equals(txtPassUser2.getText())){
+            try{
+                usuario.nuevoUsuario(Integer.valueOf(txtIdUser.getText()), txtNombreUser.getText(), txtApellidoUser.getText(), txtUserUser.getText(), txtRolUser.getSelectedIndex(), txtPassUser1.getText());
+                JOptionPane.showMessageDialog(null, "Se ha creado el usuario.");
+            }catch(java.lang.NumberFormatException e){
+                JOptionPane.showMessageDialog(null, "Ingresar un ID valido.");
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null, "Ha ocurrido un error en la creacion de usuario.");
+            }            
+        }else
+        {
+         JOptionPane.showMessageDialog(null, "Las contraseñas no son iguales");   
+        }
     }//GEN-LAST:event_btnCrearUser1ActionPerformed
+
+    private void btnCancelarUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarUserActionPerformed
+        txtIdUser.setText("");
+        txtNombreUser.setText("");
+        txtApellidoUser.setText("");
+        txtUserUser.setText("");
+        txtPassUser1.setText("");
+        txtPassUser2.setText("");
+    }//GEN-LAST:event_btnCancelarUserActionPerformed
 
     /**
      * @param args the command line arguments
@@ -260,7 +275,7 @@ public class CrearUsuario extends javax.swing.JFrame {
     private javax.swing.JTextField txtNombreUser;
     private javax.swing.JPasswordField txtPassUser1;
     private javax.swing.JPasswordField txtPassUser2;
-    private javax.swing.JTextField txtRolUser;
+    private javax.swing.JComboBox<String> txtRolUser;
     private javax.swing.JTextField txtUserUser;
     // End of variables declaration//GEN-END:variables
 }

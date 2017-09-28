@@ -14,11 +14,16 @@ public class UsuarioAdministrador extends javax.swing.JFrame {
     /**
      * Creates new form UsuarioAdministrador
      */
+    public Usuario usuario;
+    
     public UsuarioAdministrador() {
         initComponents();
         this.setVisible(true);
     }
 
+    public void setUsuario(Usuario usuario){
+        this.usuario=usuario;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -39,7 +44,6 @@ public class UsuarioAdministrador extends javax.swing.JFrame {
         btnVerUser = new javax.swing.JButton();
         btnVerBiblio = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Administrador");
         setLocation(new java.awt.Point(250, 150));
         setResizable(false);
@@ -165,6 +169,7 @@ public class UsuarioAdministrador extends javax.swing.JFrame {
 
     private void btnCrearUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearUserActionPerformed
         CrearUsuario crearuser = new CrearUsuario();
+        crearuser.usuario=usuario;
        // crearuser.usuarios = usuarios;
         Login.print();
     }//GEN-LAST:event_btnCrearUserActionPerformed

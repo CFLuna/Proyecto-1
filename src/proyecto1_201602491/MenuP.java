@@ -10,13 +10,14 @@ import javax.swing.JLabel;
 public class MenuP extends javax.swing.JFrame {
     Usuario usuarios[]= new Usuario[50];
     Bibliografia bibliografia[] = new Bibliografia[50];
+    Usuario usuario;
     /**
      * Creates new form MenuP
      */
     public MenuP() {
         initComponents();
         this.setVisible(true);
-        
+        usuario = new Usuario();
     }
 
     /**
@@ -210,6 +211,7 @@ public class MenuP extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
        Login login = new Login();
+       login.usuario=usuario;
       // login.usuarios = usuarios;
     }//GEN-LAST:event_btnLoginActionPerformed
 

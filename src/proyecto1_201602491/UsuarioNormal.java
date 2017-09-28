@@ -10,13 +10,15 @@ package proyecto1_201602491;
  * @author W7-JUEGOS
  */
 public class UsuarioNormal extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form UsuarioNormal
      */
     public UsuarioNormal() {
         initComponents();
         this.setVisible(true);
+        labelNombreUsuario.setText("Carlos");
+        labelApellidoUsuario.setText("Luna");
     }
 
     /**

@@ -5,13 +5,16 @@
  */
 package proyecto1_201602491;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author W7-JUEGOS
  */
 public class Login extends javax.swing.JFrame {
-    String useradmin="admin";
-    String passadmin="admin";
+//    String useradmin="admin";
+//    String passadmin="admin";
+    public Usuario usuario;
    // public Usuario usuarios[];
     /**
      * Creates new form Login
@@ -131,32 +134,27 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-        String usuario1 = txtContraseña.getText();
-        String contraseña1 = txtContraseña.getText();
-        if(contraseña1.equals(passadmin) && usuario1.equals(useradmin)){
+        int rol=2;
+        if((txtContraseña.getText()).equals("admin") && (txtUsuario.getText()).equals("admin")){
             UsuarioAdministrador admin = new UsuarioAdministrador();
-            //admin.usuarios = usuarios;
+            admin.setUsuario(usuario);
             System.out.println("Loged as admin");
             this.setVisible(false);         
-        }/*else if(usuarios[0]!=null){
-            int contador = 0;
-            boolean encontrado;
-            while(usuarios[contador]!=null){
-                Usuario actual_user = usuarios[contador];
-                if(actual_user.nombre.equals(usuario1)&&actual_user.contraseña.equals(contraseña1)){
-                    UsuarioNormal admin = new UsuarioNormal();
-                    System.out.println("Loged as user");
-                    this.setVisible(false);   
-                    break;
-                }
-                contador++;
+        }else if(usuario.verificar(txtUsuario.getText(),txtContraseña.getText())){
+            rol =usuario.getRol(txtUsuario.getText(), txtContraseña.getText());
+            System.out.println(rol);
+            if(rol==0){
+                UsuarioAdministrador admin = new UsuarioAdministrador();
+                admin.setUsuario(usuario);
+            }else if(rol==1){
+                UsuarioNormal usernm = new UsuarioNormal();
             }
-        }*/
+        }
         else{
             Error2 error2 = new Error2();
         }
     }//GEN-LAST:event_btnIngresarActionPerformed
-
+    
     /**
      * @param args the command line arguments
      */
