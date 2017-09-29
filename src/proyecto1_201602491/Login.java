@@ -12,10 +12,8 @@ import javax.swing.JOptionPane;
  * @author W7-JUEGOS
  */
 public class Login extends javax.swing.JFrame {
-//    String useradmin="admin";
-//    String passadmin="admin";
     public Usuario usuario;
-   // public Usuario usuarios[];
+    public Bibliografia bibliografia;
     /**
      * Creates new form Login
      */
@@ -24,8 +22,8 @@ public class Login extends javax.swing.JFrame {
         this.setVisible(true);
     }
     
-    public static void print(){
-        System.out.println("la prueba maestra");
+    public void getDatos(String nombre, String apellido){
+        
     }
         
      /**
@@ -138,6 +136,7 @@ public class Login extends javax.swing.JFrame {
         if((txtContraseña.getText()).equals("admin") && (txtUsuario.getText()).equals("admin")){
             UsuarioAdministrador admin = new UsuarioAdministrador();
             admin.setUsuario(usuario);
+            admin.bibliografia = this.bibliografia;
             System.out.println("Loged as admin");
             this.setVisible(false);         
         }else if(usuario.verificar(txtUsuario.getText(),txtContraseña.getText())){
@@ -148,6 +147,9 @@ public class Login extends javax.swing.JFrame {
                 admin.setUsuario(usuario);
             }else if(rol==1){
                 UsuarioNormal usernm = new UsuarioNormal();
+                usernm.posDatos = usuario.getID(txtUsuario.getText(), txtContraseña.getText());
+                usernm.usuario = usuario;
+                usernm.init_data();
             }
         }
         else{

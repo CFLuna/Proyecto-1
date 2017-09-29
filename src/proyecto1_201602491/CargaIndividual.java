@@ -5,12 +5,14 @@
  */
 package proyecto1_201602491;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author W7-JUEGOS
  */
 public class CargaIndividual extends javax.swing.JFrame {
-
+    public Bibliografia bibliografia;
     /**
      * Creates new form CargaIndividual
      */
@@ -18,7 +20,8 @@ public class CargaIndividual extends javax.swing.JFrame {
         initComponents();
         this.setVisible(true);
     }
-
+   
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -72,7 +75,7 @@ public class CargaIndividual extends javax.swing.JFrame {
         txtAutorCargaI.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
         comboCargaIndividual.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        comboCargaIndividual.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Libro", "Tesis", "Revista" }));
+        comboCargaIndividual.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Libro", "Revista", "Tesis" }));
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel4.setText("Titulo:");
@@ -136,6 +139,11 @@ public class CargaIndividual extends javax.swing.JFrame {
         btnCancelarIndividual.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnCancelarIndividual.setText("Cancelar");
         btnCancelarIndividual.setToolTipText("");
+        btnCancelarIndividual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarIndividualActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -247,18 +255,29 @@ public class CargaIndividual extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCargarIndividualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarIndividualActionPerformed
-        Bibliografia new_bibliografia = new Bibliografia();
-        new_bibliografia.autor = txtAutorCargaI.getText();
-        new_bibliografia.titulo = txtTituloCargaI.getText();
-        new_bibliografia.area = txtAreaCargaI.getText();
-        new_bibliografia.descripcion = txtDescripcionCargaI.getText();
-        new_bibliografia.palabrasclave = txtPalabraClaveCargaI.getText();
-        new_bibliografia.copias = txtCopiasCargaI.getText();
-        new_bibliografia.temas = txtTemasCargaI.getText();
-        new_bibliografia.edicion = txtEdicionCargaI.getText();
-        new_bibliografia.ejemplares = txtEjemplaresCargaI.getText();
-               
+        if(!txtAutorCargaI.getText().equals("")){
+            //try{
+                bibliografia.nuevaBibliografia(comboCargaIndividual.getSelectedIndex(), txtAutorCargaI.getText(), txtTituloCargaI.getText(), txtDescripcionCargaI.getText(), txtPalabraClaveCargaI.getText(), Integer.valueOf(txtEdicionCargaI.getText()), txtTemasCargaI.getText(), txtFrecuenciaCargaI.getText(), Integer.valueOf(txtEjemplaresCargaI.getText()), txtAreaCargaI.getText(), Integer.valueOf(txtCopiasCargaI.getText()));
+                JOptionPane.showMessageDialog(null, "Se ha creado una nueva bibliografia.");
+            //}catch(Exception e){
+             //   JOptionPane.showMessageDialog(null, "Ha ocurrido un error en la creacion de bibliografia.");
+            //} 
+        }
     }//GEN-LAST:event_btnCargarIndividualActionPerformed
+
+    private void btnCancelarIndividualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarIndividualActionPerformed
+        txtAutorCargaI.setText("");
+        txtTituloCargaI.setText("");
+        txtDescripcionCargaI.setText("");
+        txtPalabraClaveCargaI.setText("");
+        txtEdicionCargaI.setText("");
+        txtTemasCargaI.setText("");
+        txtFrecuenciaCargaI.setText("");
+        txtEjemplaresCargaI.setText("");
+        txtAreaCargaI.setText("");
+        txtCopiasCargaI.setText("");
+        txtDisponiblesCargaI.setText("");
+    }//GEN-LAST:event_btnCancelarIndividualActionPerformed
 
     /**
      * @param args the command line arguments

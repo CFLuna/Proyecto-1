@@ -10,7 +10,7 @@ package proyecto1_201602491;
  * @author W7-JUEGOS
  */
 public class CrearBibliografia extends javax.swing.JFrame {
-
+    Bibliografia bibliografia;
     /**
      * Creates new form CrearBibliografia
      */
@@ -90,6 +90,7 @@ public class CrearBibliografia extends javax.swing.JFrame {
 
     private void btnCargaIndividual1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargaIndividual1ActionPerformed
         CargaIndividual cargaindividual = new CargaIndividual();
+        cargaindividual.bibliografia= bibliografia;
     }//GEN-LAST:event_btnCargaIndividual1ActionPerformed
 
     /**

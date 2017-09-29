@@ -5,20 +5,19 @@
  */
 package proyecto1_201602491;
 
-import java.awt.Label;
-
 /**
  *
  * @author W7-JUEGOS
  */
 public class Usuario {
     int[] id;
-    String[] nombre;
-    String[] apellido;
+    public String[] nombre;
+    public String[] apellido;
     String[] user;
     int[] rol;
     String[] contraseña;
     int contador;
+    
     public Usuario(){
         id = new int[100];
         nombre = new String[100];
@@ -51,11 +50,32 @@ public class Usuario {
     }
     //Devuelve el rol del usuario ingresado con su contraseña
     public int getRol(String usuario, String contraseña){
-        for(int i=0; i<contador;i++){
+        for(int i=0; i<contador; i++){
             if(this.user[i].equals(usuario)&& this.contraseña[i].equals(contraseña)){
                 return rol[i];
             }
         }
         return 2;
+    }
+    //Devuelve el rol del usuario ingresado con su contraseña
+    public int getID(String usuario, String contraseña){
+        for(int i=0; i<contador; i++){
+            if(this.user[i].equals(usuario)&& this.contraseña[i].equals(contraseña)){
+                return i;
+            }
+        }
+        return -1;
+    }
+    //Obtiene el nombre y apellido del usuario para mostrarlo en el frame de opciones.
+    public String getDatos(String usuario, String nombre, String apellido){
+        int pos=0;
+        for(int i=0; i<contador; i++){
+            if(this.user[i].equals(usuario)){
+                this.user[i]=usuario;
+                this.nombre[i]=nombre;
+                this.apellido[i]=apellido;
+                break;
+            }
+        }return usuario;
     }
 }

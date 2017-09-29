@@ -5,12 +5,15 @@
  */
 package proyecto1_201602491;
 
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.WARNING_MESSAGE;
+
 /**
  *
  * @author Fcoluna
  */
 public class ModificarUsuario extends javax.swing.JFrame {
-
+    Usuario usuario;
     /**
      * Creates new form ModificarUsuario
      */
@@ -40,18 +43,18 @@ public class ModificarUsuario extends javax.swing.JFrame {
         txtNombreModificar = new javax.swing.JTextField();
         txtApellidoModificar = new javax.swing.JTextField();
         txtUserModificar = new javax.swing.JTextField();
-        txtRolModificar = new javax.swing.JTextField();
         txtPassModificar1 = new javax.swing.JPasswordField();
         txtPassModificar2 = new javax.swing.JPasswordField();
         btnBuscarModificar = new javax.swing.JButton();
         btnGuardarModificar = new javax.swing.JButton();
         btnCanelarMoficar = new javax.swing.JButton();
+        txtRolModificar = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel1.setText("Modificar Usuario:");
+        jLabel1.setText("Modificar Usuario");
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel2.setText("ID:");
@@ -82,20 +85,36 @@ public class ModificarUsuario extends javax.swing.JFrame {
 
         txtUserModificar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
-        txtRolModificar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-
         txtPassModificar1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
         txtPassModificar2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
         btnBuscarModificar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnBuscarModificar.setText("Buscar");
+        btnBuscarModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarModificarActionPerformed(evt);
+            }
+        });
 
         btnGuardarModificar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnGuardarModificar.setText("Guardar");
+        btnGuardarModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarModificarActionPerformed(evt);
+            }
+        });
 
         btnCanelarMoficar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnCanelarMoficar.setText("Cancelar");
+        btnCanelarMoficar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCanelarMoficarActionPerformed(evt);
+            }
+        });
+
+        txtRolModificar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtRolModificar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "UsuarioNormal" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -124,10 +143,10 @@ public class ModificarUsuario extends javax.swing.JFrame {
                                         .addComponent(jLabel6))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(txtRolModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtUserModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtApellidoModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtNombreModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(txtUserModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                                        .addComponent(txtApellidoModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                                        .addComponent(txtNombreModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                                        .addComponent(txtRolModificar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGap(11, 11, 11))
                                 .addGroup(layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -171,10 +190,10 @@ public class ModificarUsuario extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(txtUserModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(43, 43, 43)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(txtRolModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtRolModificar))
+                .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jLabel8))
@@ -186,11 +205,61 @@ public class ModificarUsuario extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGuardarModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCanelarMoficar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnBuscarModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarModificarActionPerformed
+        for(int i=0; i<usuario.contador; i++){
+            if(txtIdModificar.getText().equals("")){
+                txtIdModificar.setText("");
+                txtNombreModificar.setText("");
+                txtApellidoModificar.setText("");
+                txtUserModificar.setText("");
+                txtPassModificar1.setText(""); 
+                txtPassModificar2.setText("");
+                JOptionPane.showMessageDialog(null, "Ingrese un ID valido.");
+            }else if(Integer.valueOf(txtIdModificar.getText()).equals(usuario.id[i])){
+                txtNombreModificar.setText(usuario.nombre[i]);
+                txtApellidoModificar.setText(usuario.apellido[i]);
+                txtUserModificar.setText(usuario.user[i]);
+                txtPassModificar1.setText(usuario.contraseña[i]);
+                txtPassModificar2.setText(usuario.contraseña[i]);
+                
+            }else{
+                JOptionPane.showMessageDialog(null, "No se ha encontrado el usuario.");
+            }
+        }
+    }//GEN-LAST:event_btnBuscarModificarActionPerformed
+
+    private void btnCanelarMoficarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCanelarMoficarActionPerformed
+        txtIdModificar.setText("");
+        txtNombreModificar.setText("");
+        txtApellidoModificar.setText("");
+        txtUserModificar.setText("");
+        txtPassModificar1.setText(""); 
+        txtPassModificar2.setText("");
+    }//GEN-LAST:event_btnCanelarMoficarActionPerformed
+
+    private void btnGuardarModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarModificarActionPerformed
+        for(int i=0; i<usuario.contador; i++){
+            if(Integer.valueOf(txtIdModificar.getText()).equals(usuario.id[i])){
+                if(txtPassModificar1.getText().equals(txtPassModificar2.getText())){
+                    usuario.nombre[i]=txtNombreModificar.getText();
+                    usuario.apellido[i]=txtApellidoModificar.getText();
+                    usuario.user[i]=txtUserModificar.getText();
+                    usuario.rol[i]=txtRolModificar.getSelectedIndex();
+                    usuario.contraseña[i]=txtPassModificar1.getText();
+                    JOptionPane.showMessageDialog(null, "El usuario ha sido modificado", "Aviso", WARNING_MESSAGE);
+                    break;
+                }
+            }else{
+                JOptionPane.showMessageDialog(null, "No se ha encontrado el usuario.");
+            }
+        }
+    }//GEN-LAST:event_btnGuardarModificarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -244,7 +313,7 @@ public class ModificarUsuario extends javax.swing.JFrame {
     private javax.swing.JTextField txtNombreModificar;
     private javax.swing.JPasswordField txtPassModificar1;
     private javax.swing.JPasswordField txtPassModificar2;
-    private javax.swing.JTextField txtRolModificar;
+    private javax.swing.JComboBox<String> txtRolModificar;
     private javax.swing.JTextField txtUserModificar;
     // End of variables declaration//GEN-END:variables
 }

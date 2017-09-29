@@ -5,11 +5,16 @@
  */
 package proyecto1_201602491;
 
+import javax.swing.JLabel;
+
 /**
  *
  * @author W7-JUEGOS
  */
 public class UsuarioNormal extends javax.swing.JFrame {
+    Usuario usuario;
+    int posDatos;
+    Bibliografia bibliografia;
     
     /**
      * Creates new form UsuarioNormal
@@ -17,10 +22,12 @@ public class UsuarioNormal extends javax.swing.JFrame {
     public UsuarioNormal() {
         initComponents();
         this.setVisible(true);
-        labelNombreUsuario.setText("Carlos");
-        labelApellidoUsuario.setText("Luna");
+        
     }
-
+    public void init_data(){
+        labelNombreUsuario.setText(usuario.nombre[posDatos]);
+        labelApellidoUsuario.setText(usuario.apellido[posDatos]);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,7 +42,7 @@ public class UsuarioNormal extends javax.swing.JFrame {
         txtAutorUsuario = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         txtTituloUsuario = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
+        labelPalabraClave = new javax.swing.JLabel();
         txtPalabraUsuario = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         btnLogoutUsuario = new javax.swing.JButton();
@@ -65,8 +72,8 @@ public class UsuarioNormal extends javax.swing.JFrame {
 
         txtTituloUsuario.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
-        jLabel4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel4.setText("Palabra Clave");
+        labelPalabraClave.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        labelPalabraClave.setText("Palabra Clave");
 
         txtPalabraUsuario.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
@@ -77,7 +84,12 @@ public class UsuarioNormal extends javax.swing.JFrame {
         btnLogoutUsuario.setText("Logout");
 
         comboUsuario.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        comboUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Copias", "Disponibles" }));
+        comboUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboUsuarioActionPerformed(evt);
+            }
+        });
 
         btnOrdenarUsuario.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnOrdenarUsuario.setText("Ordenar");
@@ -106,7 +118,7 @@ public class UsuarioNormal extends javax.swing.JFrame {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, true, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -157,7 +169,7 @@ public class UsuarioNormal extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(txtAutorUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(129, 129, 129)
-                                        .addComponent(jLabel4))
+                                        .addComponent(labelPalabraClave))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
@@ -214,7 +226,7 @@ public class UsuarioNormal extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtAutorUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4)
+                            .addComponent(labelPalabraClave)
                             .addComponent(comboUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -243,6 +255,10 @@ public class UsuarioNormal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void comboUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -291,11 +307,11 @@ public class UsuarioNormal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel labelApellidoUsuario;
     private javax.swing.JLabel labelNombreUsuario;
+    private javax.swing.JLabel labelPalabraClave;
     private javax.swing.JTable tablaUsuario;
     private javax.swing.JTextField txtAutorUsuario;
     private javax.swing.JTextField txtPalabraUsuario;

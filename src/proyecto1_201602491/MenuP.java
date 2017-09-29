@@ -8,8 +8,7 @@ import javax.swing.JLabel;
  * @author Carlos Luna
  */
 public class MenuP extends javax.swing.JFrame {
-    Usuario usuarios[]= new Usuario[50];
-    Bibliografia bibliografia[] = new Bibliografia[50];
+    public Bibliografia bibliografia;
     Usuario usuario;
     /**
      * Creates new form MenuP
@@ -18,6 +17,7 @@ public class MenuP extends javax.swing.JFrame {
         initComponents();
         this.setVisible(true);
         usuario = new Usuario();
+        bibliografia = new Bibliografia();
     }
 
     /**
@@ -42,6 +42,7 @@ public class MenuP extends javax.swing.JFrame {
         labelmenup4 = new javax.swing.JLabel();
         labelmenup5 = new javax.swing.JLabel();
         labelmenup6 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("IPC1_Proyecto1");
@@ -80,19 +81,18 @@ public class MenuP extends javax.swing.JFrame {
                 .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
+                .addGap(32, 32, 32))
         );
         panelMenup1Layout.setVerticalGroup(
             panelMenup1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelMenup1Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jLabel1)
-                .addContainerGap(15, Short.MAX_VALUE))
-            .addGroup(panelMenup1Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(panelMenup1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnLogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnLogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnLogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(panelMenup1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(0, 8, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -109,7 +109,7 @@ public class MenuP extends javax.swing.JFrame {
 
         labelImagen1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FondoMenuP.png"))); // NOI18N
 
-        labelmenup1.setFont(new java.awt.Font("OCR A Extended", 0, 24)); // NOI18N
+        labelmenup1.setFont(new java.awt.Font("OCR A Extended", 1, 24)); // NOI18N
         labelmenup1.setText("BIBLIOTECA VIRTUAL USAC");
         labelmenup1.setToolTipText("");
 
@@ -128,35 +128,39 @@ public class MenuP extends javax.swing.JFrame {
         labelmenup6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         labelmenup6.setText("8:00 am - 12:00 pm");
 
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel2.setText("adminbiblioteca@correo100%real.com");
+
         javax.swing.GroupLayout panelMenup2Layout = new javax.swing.GroupLayout(panelMenup2);
         panelMenup2.setLayout(panelMenup2Layout);
         panelMenup2Layout.setHorizontalGroup(
             panelMenup2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelMenup2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(labelImagen1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(labelImagen1, javax.swing.GroupLayout.PREFERRED_SIZE, 686, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addGroup(panelMenup2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelMenup2Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(labelmenup1))
+                    .addGroup(panelMenup2Layout.createSequentialGroup()
+                        .addGap(135, 135, 135)
+                        .addComponent(labelmenup3))
+                    .addGroup(panelMenup2Layout.createSequentialGroup()
+                        .addGap(161, 161, 161)
+                        .addComponent(labelmenup5))
+                    .addGroup(panelMenup2Layout.createSequentialGroup()
+                        .addGap(121, 121, 121)
                         .addGroup(panelMenup2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelMenup2Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(labelmenup1))
-                            .addGroup(panelMenup2Layout.createSequentialGroup()
-                                .addGap(135, 135, 135)
-                                .addComponent(labelmenup3))
-                            .addGroup(panelMenup2Layout.createSequentialGroup()
-                                .addGap(161, 161, 161)
-                                .addComponent(labelmenup5))
-                            .addGroup(panelMenup2Layout.createSequentialGroup()
-                                .addGap(121, 121, 121)
-                                .addGroup(panelMenup2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(labelmenup6)
-                                    .addComponent(labelmenup4))))
-                        .addGap(15, 15, 15))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMenup2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(labelmenup2)
-                        .addGap(73, 73, 73))))
+                            .addComponent(labelmenup6)
+                            .addComponent(labelmenup4)))
+                    .addGroup(panelMenup2Layout.createSequentialGroup()
+                        .addGap(83, 83, 83)
+                        .addComponent(labelmenup2))
+                    .addGroup(panelMenup2Layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addComponent(jLabel2)))
+                .addGap(28, 28, 28))
         );
         panelMenup2Layout.setVerticalGroup(
             panelMenup2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -176,7 +180,9 @@ public class MenuP extends javax.swing.JFrame {
                         .addGap(13, 13, 13)
                         .addComponent(labelmenup5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(labelmenup6)))
+                        .addComponent(labelmenup6)
+                        .addGap(28, 28, 28)
+                        .addComponent(jLabel2)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -184,12 +190,12 @@ public class MenuP extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelMenup1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(panelMenup2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnAbout, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(489, 489, 489))
+            .addComponent(panelMenup1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelMenup2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -212,6 +218,8 @@ public class MenuP extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
        Login login = new Login();
        login.usuario=usuario;
+       login.bibliografia=bibliografia;
+       
       // login.usuarios = usuarios;
     }//GEN-LAST:event_btnLoginActionPerformed
 
@@ -255,6 +263,7 @@ public class MenuP extends javax.swing.JFrame {
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnLogout;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel labelImagen1;
     private javax.swing.JLabel labelmenup1;
     private javax.swing.JLabel labelmenup2;

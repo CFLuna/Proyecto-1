@@ -25,10 +25,6 @@ public class CrearUsuario extends javax.swing.JFrame {
         this.setVisible(true);
     }
     
-    public static void almacenaruser(){
-        
-    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -61,7 +57,7 @@ public class CrearUsuario extends javax.swing.JFrame {
         setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel1.setText("Crear Usuario:");
+        jLabel1.setText("Crear Usuario");
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel2.setText("ID:");
@@ -209,9 +205,8 @@ public class CrearUsuario extends javax.swing.JFrame {
             }catch(Exception e){
                 JOptionPane.showMessageDialog(null, "Ha ocurrido un error en la creacion de usuario.");
             }            
-        }else
-        {
-         JOptionPane.showMessageDialog(null, "Las contraseñas no son iguales");   
+        }else{
+         JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden.");   
         }
     }//GEN-LAST:event_btnCrearUser1ActionPerformed
 

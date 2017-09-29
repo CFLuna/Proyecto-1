@@ -15,6 +15,7 @@ public class UsuarioAdministrador extends javax.swing.JFrame {
      * Creates new form UsuarioAdministrador
      */
     public Usuario usuario;
+    public Bibliografia bibliografia;
     
     public UsuarioAdministrador() {
         initComponents();
@@ -96,6 +97,11 @@ public class UsuarioAdministrador extends javax.swing.JFrame {
 
         btnEliminarBiblio.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnEliminarBiblio.setText("Eliminar");
+        btnEliminarBiblio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarBiblioActionPerformed(evt);
+            }
+        });
 
         btnVerUser.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnVerUser.setText("Ver");
@@ -170,16 +176,16 @@ public class UsuarioAdministrador extends javax.swing.JFrame {
     private void btnCrearUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearUserActionPerformed
         CrearUsuario crearuser = new CrearUsuario();
         crearuser.usuario=usuario;
-       // crearuser.usuarios = usuarios;
-        Login.print();
     }//GEN-LAST:event_btnCrearUserActionPerformed
 
     private void btnModificarUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarUserActionPerformed
         ModificarUsuario modificaruser = new ModificarUsuario();
+        modificaruser.usuario=usuario;
     }//GEN-LAST:event_btnModificarUserActionPerformed
 
     private void btnEliminarUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarUserActionPerformed
         EliminarUsuario eliminaruser = new EliminarUsuario();
+        eliminaruser.usuario=usuario;
     }//GEN-LAST:event_btnEliminarUserActionPerformed
 
     private void btnVerUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerUserActionPerformed
@@ -188,11 +194,18 @@ public class UsuarioAdministrador extends javax.swing.JFrame {
 
     private void btnCrearBiblioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearBiblioActionPerformed
         CrearBibliografia crearbiblio = new CrearBibliografia();
+        crearbiblio.bibliografia=bibliografia;
     }//GEN-LAST:event_btnCrearBiblioActionPerformed
 
     private void btnModificarBiblioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarBiblioActionPerformed
-        //ModificarBibliografia modificarbiblio = new ModificarBibliografia();
+        ModificarBibliografia modificarbiblio = new ModificarBibliografia();
+        modificarbiblio.bibliografia=bibliografia;
     }//GEN-LAST:event_btnModificarBiblioActionPerformed
+
+    private void btnEliminarBiblioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarBiblioActionPerformed
+        EliminarBibliografia eliminarbiblio = new EliminarBibliografia();
+        eliminarbiblio.bibliografia=bibliografia;
+    }//GEN-LAST:event_btnEliminarBiblioActionPerformed
 
     /**
      * @param args the command line arguments
