@@ -101,6 +101,7 @@ public class EliminarUsuario extends javax.swing.JFrame {
         txtUserEliminar.setEnabled(false);
 
         txtRolEliminar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtRolEliminar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtRolEliminar.setEnabled(false);
 
         btnBuscarEliminar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
@@ -133,13 +134,18 @@ public class EliminarUsuario extends javax.swing.JFrame {
                                         .addComponent(jLabel5)
                                         .addComponent(jLabel6)
                                         .addComponent(jLabel7))
-                                    .addGap(29, 29, 29)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(txtRolEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                                        .addComponent(txtUserEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                                        .addComponent(txtApellidoEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                                        .addComponent(txtNombreEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                                        .addComponent(txtContraseñaEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(29, 29, 29)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(txtUserEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                                                .addComponent(txtApellidoEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                                                .addComponent(txtNombreEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                                                .addComponent(txtContraseñaEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(txtRolEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(87, 87, 87))))
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnEliminarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -178,7 +184,7 @@ public class EliminarUsuario extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(txtUserEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(txtRolEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
@@ -197,21 +203,26 @@ public class EliminarUsuario extends javax.swing.JFrame {
 
     private void btnBuscarEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarEliminarActionPerformed
         for(int i=0; i<usuario.contador; i++){
-            if(txtIdEliminar.getText().equals("")){
-                txtIdEliminar.setText("");
-                txtNombreEliminar.setText("");
-                txtApellidoEliminar.setText("");
-                txtUserEliminar.setText("");
-                txtContraseñaEliminar.setText(""); 
-                JOptionPane.showMessageDialog(null, "Ingrese un ID valido.");
-            }else if(Integer.valueOf(txtIdEliminar.getText()).equals(usuario.id[i])){
-                txtNombreEliminar.setText(usuario.nombre[i]);
-                txtApellidoEliminar.setText(usuario.apellido[i]);
-                txtUserEliminar.setText(usuario.user[i]);
-                txtRolEliminar.setText(String.valueOf(usuario.rol[i]));
-                txtContraseñaEliminar.setText(usuario.contraseña[i]);               
-            }else{
-                JOptionPane.showMessageDialog(null, "No se ha encontrado el usuario.");
+            try{
+                if(txtIdEliminar.getText().equals("")){
+                    txtIdEliminar.setText("");
+                    txtNombreEliminar.setText("");
+                    txtApellidoEliminar.setText("");
+                    txtUserEliminar.setText("");
+                    txtContraseñaEliminar.setText(""); 
+                    JOptionPane.showMessageDialog(null, "Ingrese un ID valido.");
+                }else if(Integer.valueOf(txtIdEliminar.getText()).equals(usuario.id[i])){
+                    txtNombreEliminar.setText(usuario.nombre[i]);
+                    txtApellidoEliminar.setText(usuario.apellido[i]);
+                    txtUserEliminar.setText(usuario.user[i]);
+                    txtRolEliminar.setText(String.valueOf(usuario.rol[i]));
+                    txtContraseñaEliminar.setText(usuario.contraseña[i]);               
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "No se ha encontrado el usuario.");
+                }
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null, "Ha ocurrido un error!!", "Aviso", WARNING_MESSAGE);
             }
         }
     }//GEN-LAST:event_btnBuscarEliminarActionPerformed
@@ -219,6 +230,8 @@ public class EliminarUsuario extends javax.swing.JFrame {
     private void btnEliminarUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarUserActionPerformed
         for(int i=0; i<usuario.contador; i++){
             if(Integer.valueOf(txtIdEliminar.getText()).equals(usuario.id[i])){
+                usuario.id[i]=usuario.id[i]-usuario.id[i];
+                usuario.rol[i]=usuario.rol[i]-usuario.rol[i];
                 usuario.nombre[i]="";
                 usuario.apellido[i]="";
                 usuario.user[i]="";

@@ -256,12 +256,16 @@ public class CargaIndividual extends javax.swing.JFrame {
 
     private void btnCargarIndividualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarIndividualActionPerformed
         if(!txtAutorCargaI.getText().equals("")){
-            //try{
-                bibliografia.nuevaBibliografia(comboCargaIndividual.getSelectedIndex(), txtAutorCargaI.getText(), txtTituloCargaI.getText(), txtDescripcionCargaI.getText(), txtPalabraClaveCargaI.getText(), Integer.valueOf(txtEdicionCargaI.getText()), txtTemasCargaI.getText(), txtFrecuenciaCargaI.getText(), Integer.valueOf(txtEjemplaresCargaI.getText()), txtAreaCargaI.getText(), Integer.valueOf(txtCopiasCargaI.getText()));
+            try{
+                bibliografia.nuevaBibliografia(comboCargaIndividual.getSelectedIndex(), txtAutorCargaI.getText(), txtTituloCargaI.getText(), txtDescripcionCargaI.getText(), txtPalabraClaveCargaI.getText(), Integer.valueOf(txtEdicionCargaI.getText()), txtTemasCargaI.getText(), txtFrecuenciaCargaI.getText(), Integer.valueOf(txtEjemplaresCargaI.getText()), txtAreaCargaI.getText(), Integer.valueOf(txtCopiasCargaI.getText()), Integer.valueOf(txtDisponiblesCargaI.getText()));
                 JOptionPane.showMessageDialog(null, "Se ha creado una nueva bibliografia.");
-            //}catch(Exception e){
-             //   JOptionPane.showMessageDialog(null, "Ha ocurrido un error en la creacion de bibliografia.");
-            //} 
+            }catch(java.lang.NumberFormatException e){
+                JOptionPane.showMessageDialog(null, "Ingrese datos validos para la bibliografia.");
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null, "Ha ocurrido un error en la creacion de la bibliografia.");
+            } 
+        }else if(txtAutorCargaI.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Ingrese datos validos para la bibliografia.");
         }
     }//GEN-LAST:event_btnCargarIndividualActionPerformed
 

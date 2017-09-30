@@ -21,6 +21,7 @@ public class Bibliografia {
     int[] ejemplares;
     String[] area;
     int[] copias;
+    int[] disponibles;
     int contadorb;
     
     public Bibliografia(){
@@ -35,10 +36,11 @@ public class Bibliografia {
         ejemplares = new int[100];
         area = new String[100];
         copias = new int[100];
+        disponibles = new int[100];
         contadorb=0;
     }
     
-    public void nuevaBibliografia(int tipo, String autor, String titulo, String descripcion, String palabraclave, int edicion, String temas, String frecuencia, int ejemplares, String area, int copias){
+    public void nuevaBibliografia(int tipo, String autor, String titulo, String descripcion, String palabraclave, int edicion, String temas, String frecuencia, int ejemplares, String area, int copias, int disponibles){
         this.tipo[contadorb]=tipo;
         this.autor[contadorb]=autor;
         this.titulo[contadorb]=titulo;
@@ -50,6 +52,7 @@ public class Bibliografia {
         this.ejemplares[contadorb]=ejemplares;
         this.area[contadorb]=area;
         this.copias[contadorb]=copias;
+        this.disponibles[contadorb]=disponibles;
         contadorb++;
     }
 }

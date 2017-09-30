@@ -5,6 +5,9 @@
  */
 package proyecto1_201602491;
 
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.WARNING_MESSAGE;
+
 /**
  *
  * @author W7-JUEGOS
@@ -103,6 +106,11 @@ public class EliminarBibliografia extends javax.swing.JFrame {
 
         btnBuscarEliminarBiblio.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnBuscarEliminarBiblio.setText("Buscar");
+        btnBuscarEliminarBiblio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarEliminarBiblioActionPerformed(evt);
+            }
+        });
 
         jLabel9.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel9.setText("Frecuencia Actual:");
@@ -139,9 +147,19 @@ public class EliminarBibliografia extends javax.swing.JFrame {
 
         btnEliminarBiblio.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnEliminarBiblio.setText("Eliminar");
+        btnEliminarBiblio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarBiblioActionPerformed(evt);
+            }
+        });
 
         btnCancelarEliminarBiblio.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnCancelarEliminarBiblio.setText("Cancelar");
+        btnCancelarEliminarBiblio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarEliminarBiblioActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -162,16 +180,13 @@ public class EliminarBibliografia extends javax.swing.JFrame {
                                             .addComponent(txtTituloEliminarBiblio, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                             .addComponent(btnBuscarEliminarBiblio, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabel2)
-                                            .addGap(10, 10, 10)))
+                                        .addComponent(jLabel2))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(txtTipoEliminarBiblio, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(layout.createSequentialGroup()
                                             .addGap(9, 9, 9)
-                                            .addComponent(jLabel8)
-                                            .addGap(10, 10, 10))))
+                                            .addComponent(jLabel8))))
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel4)
@@ -267,6 +282,85 @@ public class EliminarBibliografia extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnBuscarEliminarBiblioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarEliminarBiblioActionPerformed
+        for(int i=0; i<bibliografia.contadorb; i++){
+            if(txtTituloEliminarBiblio.getText().equals("")){
+                txtAutorEliminarBiblio.setText("");
+                txtDrescripcionEliminarBiblio.setText("");
+                txtPalabraClaveEliminarBiblio.setText("");
+                txtEdicionEliminarBiblio.setText("");
+                txtTemasEliminarBiblio.setText("");
+                txtFrecuenciaEliminarBiblio.setText("");
+                txtEjemplaresEliminarBiblio.setText("");
+                txtAreaEliminarBiblio.setText("");
+                txtCopiasEliminarBiblio.setText("");
+                txtDisponiblesEliminarBiblio.setText("");
+                JOptionPane.showMessageDialog(null, "Ingrese un Titulo para buscar.");
+                
+            }else if(txtTituloEliminarBiblio.getText().equals(bibliografia.titulo[i])){
+                txtAutorEliminarBiblio.setText(bibliografia.autor[i]);
+                txtDrescripcionEliminarBiblio.setText(bibliografia.descripcion[i]);
+                txtPalabraClaveEliminarBiblio.setText(bibliografia.palabraclave[i]);
+                txtEdicionEliminarBiblio.setText(String.valueOf(bibliografia.edicion[i]));
+                txtTemasEliminarBiblio.setText(bibliografia.temas[i]);
+                txtFrecuenciaEliminarBiblio.setText(bibliografia.frecuencia[i]);
+                txtEjemplaresEliminarBiblio.setText(String.valueOf(bibliografia.ejemplares[i]));
+                txtAreaEliminarBiblio.setText(bibliografia.area[i]);
+                txtCopiasEliminarBiblio.setText(String.valueOf(bibliografia.copias[i]));
+                txtDisponiblesEliminarBiblio.setText(String.valueOf(bibliografia.disponibles[i]));
+                txtTipoEliminarBiblio.setText(String.valueOf(bibliografia.tipo[i]));
+                
+            }else{
+                JOptionPane.showMessageDialog(null, "No se ha encontrado el Titulo buscado.");
+            }
+        }
+    }//GEN-LAST:event_btnBuscarEliminarBiblioActionPerformed
+
+    private void btnCancelarEliminarBiblioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarEliminarBiblioActionPerformed
+        txtTituloEliminarBiblio.setText("");
+        txtAutorEliminarBiblio.setText("");
+        txtDrescripcionEliminarBiblio.setText("");
+        txtPalabraClaveEliminarBiblio.setText("");
+        txtEdicionEliminarBiblio.setText("");
+        txtTemasEliminarBiblio.setText("");
+        txtFrecuenciaEliminarBiblio.setText("");
+        txtEjemplaresEliminarBiblio.setText("");
+        txtAreaEliminarBiblio.setText("");
+        txtCopiasEliminarBiblio.setText("");
+        txtDisponiblesEliminarBiblio.setText("");
+    }//GEN-LAST:event_btnCancelarEliminarBiblioActionPerformed
+
+    private void btnEliminarBiblioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarBiblioActionPerformed
+        for(int i=0; i<bibliografia.contadorb; i++){
+            if(txtTituloEliminarBiblio.getText().equals(bibliografia.titulo[i])){
+                bibliografia.titulo[i]="";
+                bibliografia.autor[i]="";
+                bibliografia.descripcion[i]="";
+                bibliografia.palabraclave[i]="";
+                bibliografia.temas[i]="";
+                bibliografia.frecuencia[i]="";
+                bibliografia.area[i]="";
+                bibliografia.edicion[i]=bibliografia.edicion[i]-bibliografia.edicion[i];
+                bibliografia.copias[i]=bibliografia.copias[i]-bibliografia.copias[i];
+                bibliografia.ejemplares[i]= bibliografia.ejemplares[i]- bibliografia.ejemplares[i];
+                bibliografia.disponibles[i]=bibliografia.disponibles[i]-bibliografia.disponibles[i];
+                bibliografia.tipo[i]=bibliografia.tipo[i]-bibliografia.tipo[i];
+                txtTituloEliminarBiblio.setText("");
+                txtAutorEliminarBiblio.setText("");
+                txtDrescripcionEliminarBiblio.setText("");
+                txtPalabraClaveEliminarBiblio.setText("");
+                txtEdicionEliminarBiblio.setText("");
+                txtTemasEliminarBiblio.setText("");
+                txtFrecuenciaEliminarBiblio.setText("");
+                txtEjemplaresEliminarBiblio.setText("");
+                txtAreaEliminarBiblio.setText("");
+                txtCopiasEliminarBiblio.setText("");
+                txtDisponiblesEliminarBiblio.setText("");
+                JOptionPane.showMessageDialog(null, "La bibliografia ha sido eliminada.", "Aviso", WARNING_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_btnEliminarBiblioActionPerformed
 
     /**
      * @param args the command line arguments

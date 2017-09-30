@@ -49,6 +49,8 @@ public class ModificarUsuario extends javax.swing.JFrame {
         btnGuardarModificar = new javax.swing.JButton();
         btnCanelarMoficar = new javax.swing.JButton();
         txtRolModificar = new javax.swing.JComboBox<>();
+        jLabel9 = new javax.swing.JLabel();
+        txtRolActualModificar = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -69,7 +71,7 @@ public class ModificarUsuario extends javax.swing.JFrame {
         jLabel5.setText("User:");
 
         jLabel6.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel6.setText("Rol:");
+        jLabel6.setText("Rol Actual:");
 
         jLabel7.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel7.setText("Ingresar Contraseña:");
@@ -116,6 +118,13 @@ public class ModificarUsuario extends javax.swing.JFrame {
         txtRolModificar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtRolModificar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "UsuarioNormal" }));
 
+        jLabel9.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel9.setText("Nuevo Rol:");
+
+        txtRolActualModificar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtRolActualModificar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtRolActualModificar.setEnabled(false);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -128,26 +137,37 @@ public class ModificarUsuario extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(txtIdModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnBuscarModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(11, 11, 11))
+                        .addComponent(btnBuscarModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(23, 23, 23)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel3)
-                                        .addComponent(jLabel4)
-                                        .addComponent(jLabel5)
-                                        .addComponent(jLabel6))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(txtUserModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                                        .addComponent(txtApellidoModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                                        .addComponent(txtNombreModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                                        .addComponent(txtRolModificar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGap(11, 11, 11))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(23, 23, 23)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel3)
+                                            .addComponent(jLabel4)
+                                            .addComponent(jLabel5)
+                                            .addComponent(jLabel6))
+                                        .addGap(3, 3, 3)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(47, 47, 47)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(txtUserModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(txtApellidoModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(txtNombreModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(txtRolActualModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(93, 93, 93))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel9)
+                                        .addGap(47, 47, 47)
+                                        .addComponent(txtRolModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jLabel1)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel7)
@@ -155,17 +175,15 @@ public class ModificarUsuario extends javax.swing.JFrame {
                                     .addGap(30, 30, 30)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(txtPassModificar2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
-                .addContainerGap(29, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnGuardarModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
-                .addComponent(btnCanelarMoficar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(97, 97, 97))
+                                        .addComponent(txtPassModificar2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addGap(57, 57, 57)
+                                    .addComponent(btnGuardarModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(54, 54, 54)
+                                    .addComponent(btnCanelarMoficar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(68, 68, 68))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,11 +207,15 @@ public class ModificarUsuario extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addComponent(txtUserModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtRolModificar))
                 .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtRolActualModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel9)
+                    .addComponent(txtRolModificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jLabel8))
@@ -205,7 +227,7 @@ public class ModificarUsuario extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGuardarModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCanelarMoficar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         pack();
@@ -213,23 +235,29 @@ public class ModificarUsuario extends javax.swing.JFrame {
 
     private void btnBuscarModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarModificarActionPerformed
         for(int i=0; i<usuario.contador; i++){
-            if(txtIdModificar.getText().equals("")){
+            try{
+                if(txtIdModificar.getText().equals("")){
                 txtIdModificar.setText("");
                 txtNombreModificar.setText("");
                 txtApellidoModificar.setText("");
                 txtUserModificar.setText("");
                 txtPassModificar1.setText(""); 
                 txtPassModificar2.setText("");
-                JOptionPane.showMessageDialog(null, "Ingrese un ID valido.");
-            }else if(Integer.valueOf(txtIdModificar.getText()).equals(usuario.id[i])){
-                txtNombreModificar.setText(usuario.nombre[i]);
-                txtApellidoModificar.setText(usuario.apellido[i]);
-                txtUserModificar.setText(usuario.user[i]);
-                txtPassModificar1.setText(usuario.contraseña[i]);
-                txtPassModificar2.setText(usuario.contraseña[i]);
+                JOptionPane.showMessageDialog(null, "Ingrese un ID para buscar.");
                 
-            }else{
-                JOptionPane.showMessageDialog(null, "No se ha encontrado el usuario.");
+                }else if(Integer.valueOf(txtIdModificar.getText()).equals(usuario.id[i])){
+                    txtNombreModificar.setText(usuario.nombre[i]);
+                    txtApellidoModificar.setText(usuario.apellido[i]);
+                    txtUserModificar.setText(usuario.user[i]);
+                    txtPassModificar1.setText(usuario.contraseña[i]);
+                    txtPassModificar2.setText(usuario.contraseña[i]);
+                    txtRolActualModificar.setText(String.valueOf(usuario.rol[i]));
+
+                }else{
+                    JOptionPane.showMessageDialog(null, "No se ha encontrado el usuario.");
+                }
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null, "Ingrese un ID valido");
             }
         }
     }//GEN-LAST:event_btnBuscarModificarActionPerformed
@@ -247,16 +275,25 @@ public class ModificarUsuario extends javax.swing.JFrame {
         for(int i=0; i<usuario.contador; i++){
             if(Integer.valueOf(txtIdModificar.getText()).equals(usuario.id[i])){
                 if(txtPassModificar1.getText().equals(txtPassModificar2.getText())){
-                    usuario.nombre[i]=txtNombreModificar.getText();
-                    usuario.apellido[i]=txtApellidoModificar.getText();
-                    usuario.user[i]=txtUserModificar.getText();
-                    usuario.rol[i]=txtRolModificar.getSelectedIndex();
-                    usuario.contraseña[i]=txtPassModificar1.getText();
-                    JOptionPane.showMessageDialog(null, "El usuario ha sido modificado", "Aviso", WARNING_MESSAGE);
-                    break;
+                    try{
+                        usuario.nombre[i]=txtNombreModificar.getText();
+                        usuario.apellido[i]=txtApellidoModificar.getText();
+                        usuario.user[i]=txtUserModificar.getText();
+                        usuario.rol[i]=txtRolModificar.getSelectedIndex();
+                        usuario.contraseña[i]=txtPassModificar1.getText();
+                        txtNombreModificar.setText("");
+                        txtApellidoModificar.setText("");
+                        txtUserModificar.setText("");
+                        txtPassModificar1.setText(""); 
+                        txtPassModificar2.setText("");
+                        JOptionPane.showMessageDialog(null, "El usuario ha sido modificado", "Aviso", WARNING_MESSAGE);
+                        break;
+                    }catch(Exception e){
+                        JOptionPane.showMessageDialog(null, "Ha ocurrido un error!!", "Aviso", WARNING_MESSAGE);
+                    }
+                }else{
+                    JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden.");
                 }
-            }else{
-                JOptionPane.showMessageDialog(null, "No se ha encontrado el usuario.");
             }
         }
     }//GEN-LAST:event_btnGuardarModificarActionPerformed
@@ -308,11 +345,13 @@ public class ModificarUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField txtApellidoModificar;
     private javax.swing.JTextField txtIdModificar;
     private javax.swing.JTextField txtNombreModificar;
     private javax.swing.JPasswordField txtPassModificar1;
     private javax.swing.JPasswordField txtPassModificar2;
+    private javax.swing.JTextField txtRolActualModificar;
     private javax.swing.JComboBox<String> txtRolModificar;
     private javax.swing.JTextField txtUserModificar;
     // End of variables declaration//GEN-END:variables

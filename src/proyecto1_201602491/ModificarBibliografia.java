@@ -5,6 +5,9 @@
  */
 package proyecto1_201602491;
 
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.WARNING_MESSAGE;
+
 /**
  *
  * @author W7-JUEGOS
@@ -56,6 +59,8 @@ public class ModificarBibliografia extends javax.swing.JFrame {
         txtDisponiblesModificar = new javax.swing.JTextField();
         btnGuardarModificarBiblio = new javax.swing.JButton();
         btnCancelarModificarBiblio = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        txtTipoActualModificarBiblio = new javax.swing.JTextField();
 
         setTitle("Modificar Biblografia");
         setResizable(false);
@@ -73,6 +78,11 @@ public class ModificarBibliografia extends javax.swing.JFrame {
 
         btnBuscarModificarBiblio.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnBuscarModificarBiblio.setText("Buscar");
+        btnBuscarModificarBiblio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarModificarBiblioActionPerformed(evt);
+            }
+        });
 
         comboModificarBiblio.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         comboModificarBiblio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Libro", "Revista", "Tesis" }));
@@ -129,9 +139,26 @@ public class ModificarBibliografia extends javax.swing.JFrame {
 
         btnGuardarModificarBiblio.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnGuardarModificarBiblio.setText("Guardar");
+        btnGuardarModificarBiblio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarModificarBiblioActionPerformed(evt);
+            }
+        });
 
         btnCancelarModificarBiblio.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnCancelarModificarBiblio.setText("Cancelar");
+        btnCancelarModificarBiblio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarModificarBiblioActionPerformed(evt);
+            }
+        });
+
+        jLabel14.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel14.setText("Tipo Actual:");
+
+        txtTipoActualModificarBiblio.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtTipoActualModificarBiblio.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtTipoActualModificarBiblio.setEnabled(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -141,55 +168,54 @@ public class ModificarBibliografia extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(32, 32, 32)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(txtTituloModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnBuscarModificarBiblio, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(4, 4, 4)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(77, 77, 77)
-                                        .addComponent(comboModificarBiblio, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel2)
-                                        .addGap(42, 42, 42))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel4)
-                                        .addComponent(jLabel5)
-                                        .addComponent(txtDescripcionModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel6)
-                                        .addComponent(txtPalabraClaveModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel7)
-                                        .addComponent(txtEdicionModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtTemasModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel10)
-                                        .addComponent(txtAutorModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(83, 83, 83)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel8)
-                                        .addComponent(txtCopiasModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel12)
-                                        .addComponent(txtAreaModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel11)
-                                        .addComponent(txtEjemplaresModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel9)
-                                        .addComponent(txtFrecuenciaModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel13)
-                                        .addComponent(txtDisponiblesModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(jLabel3)
+                                    .addGap(264, 264, 264)
+                                    .addComponent(jLabel14)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtTipoActualModificarBiblio, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel4)
+                                            .addComponent(jLabel5)
+                                            .addComponent(txtDescripcionModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel6)
+                                            .addComponent(txtPalabraClaveModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel7)
+                                            .addComponent(txtEdicionModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtTemasModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel10)
+                                            .addComponent(txtAutorModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(83, 83, 83)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel8)
+                                            .addComponent(txtCopiasModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel12)
+                                            .addComponent(txtAreaModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel11)
+                                            .addComponent(txtEjemplaresModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel9)
+                                            .addComponent(txtFrecuenciaModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel13)
+                                            .addComponent(txtDisponiblesModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txtTituloModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnBuscarModificarBiblio, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(comboModificarBiblio, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(116, 116, 116)
                         .addComponent(btnGuardarModificarBiblio, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(116, 116, 116)
                         .addComponent(btnCancelarModificarBiblio, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addGap(21, 21, 21))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -197,17 +223,16 @@ public class ModificarBibliografia extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtTituloModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnBuscarModificarBiblio, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(comboModificarBiblio, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel14)
+                    .addComponent(txtTipoActualModificarBiblio, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtTituloModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscarModificarBiblio, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboModificarBiblio, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -252,11 +277,97 @@ public class ModificarBibliografia extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelarModificarBiblio, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnGuardarModificarBiblio, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnBuscarModificarBiblioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarModificarBiblioActionPerformed
+        for(int i=0; i<bibliografia.contadorb; i++){
+            if(txtTituloModificar.getText().equals("")){
+                txtAutorModificar.setText("");
+                txtDescripcionModificar.setText("");
+                txtPalabraClaveModificar.setText("");
+                txtEdicionModificar.setText("");
+                txtTemasModificar.setText("");
+                txtFrecuenciaModificar.setText("");
+                txtEjemplaresModificar.setText("");
+                txtAreaModificar.setText("");
+                txtCopiasModificar.setText("");
+                txtDisponiblesModificar.setText("");
+                JOptionPane.showMessageDialog(null, "Ingrese un Titulo para buscar.");
+                
+            }else if(txtTituloModificar.getText().equals(bibliografia.titulo[i])){
+                txtAutorModificar.setText(bibliografia.autor[i]);
+                txtDescripcionModificar.setText(bibliografia.descripcion[i]);
+                txtPalabraClaveModificar.setText(bibliografia.palabraclave[i]);
+                txtEdicionModificar.setText(String.valueOf(bibliografia.edicion[i]));
+                txtTemasModificar.setText(bibliografia.temas[i]);
+                txtFrecuenciaModificar.setText(bibliografia.frecuencia[i]);
+                txtEjemplaresModificar.setText(String.valueOf(bibliografia.ejemplares[i]));
+                txtAreaModificar.setText(bibliografia.area[i]);
+                txtCopiasModificar.setText(String.valueOf(bibliografia.copias[i]));
+                txtDisponiblesModificar.setText(String.valueOf(bibliografia.disponibles[i]));
+                txtTipoActualModificarBiblio.setText(String.valueOf(bibliografia.tipo[i]));
+                
+            }else{
+                JOptionPane.showMessageDialog(null, "No se ha encontrado el Titulo buscado.");
+            }
+        }
+    }//GEN-LAST:event_btnBuscarModificarBiblioActionPerformed
+
+    private void btnGuardarModificarBiblioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarModificarBiblioActionPerformed
+        for(int i=0; i<bibliografia.contadorb; i++){
+            if(txtTituloModificar.getText().equals(bibliografia.titulo[i])){
+                try{
+                bibliografia.titulo[i]=txtTituloModificar.getText();
+                bibliografia.autor[i]=txtAutorModificar.getText();    
+                bibliografia.descripcion[i]=txtDescripcionModificar.getText();
+                bibliografia.palabraclave[i]=txtPalabraClaveModificar.getText();
+                bibliografia.edicion[i]=Integer.valueOf(txtEdicionModificar.getText());
+                bibliografia.temas[i]=txtTemasModificar.getText();
+                bibliografia.frecuencia[i]=txtFrecuenciaModificar.getText();
+                bibliografia.ejemplares[i]=Integer.valueOf(txtEjemplaresModificar.getText());
+                bibliografia.area[i]=txtAreaModificar.getText();
+                bibliografia.copias[i]=Integer.valueOf(txtCopiasModificar.getText());
+                bibliografia.disponibles[i]=Integer.valueOf(txtDisponiblesModificar.getText());
+                bibliografia.tipo[i]=comboModificarBiblio.getSelectedIndex();
+                txtAutorModificar.setText("");
+                txtDescripcionModificar.setText("");
+                txtPalabraClaveModificar.setText("");
+                txtEdicionModificar.setText("");
+                txtTemasModificar.setText("");
+                txtFrecuenciaModificar.setText("");
+                txtEjemplaresModificar.setText("");
+                txtAreaModificar.setText("");
+                txtCopiasModificar.setText("");
+                txtDisponiblesModificar.setText("");
+                JOptionPane.showMessageDialog(null, "La bibliografia ha sido modificada.", "Aviso", WARNING_MESSAGE);
+                break;
+                }catch(java.lang.NumberFormatException e){
+                    JOptionPane.showMessageDialog(null, "Ingrese datos validos.");
+                }catch(Exception e){
+                    JOptionPane.showMessageDialog(null, "Ha ocurrido un error!!", "Aviso", WARNING_MESSAGE);
+                }
+            }else{
+                JOptionPane.showMessageDialog(null, "No se ha encontrado la bibliografia.");
+            }
+        }
+    }//GEN-LAST:event_btnGuardarModificarBiblioActionPerformed
+
+    private void btnCancelarModificarBiblioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarModificarBiblioActionPerformed
+        txtAutorModificar.setText("");
+        txtDescripcionModificar.setText("");
+        txtPalabraClaveModificar.setText("");
+        txtEdicionModificar.setText("");
+        txtTemasModificar.setText("");
+        txtFrecuenciaModificar.setText("");
+        txtEjemplaresModificar.setText("");
+        txtAreaModificar.setText("");
+        txtCopiasModificar.setText("");
+        txtDisponiblesModificar.setText("");
+    }//GEN-LAST:event_btnCancelarModificarBiblioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -303,6 +414,7 @@ public class ModificarBibliografia extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -321,6 +433,7 @@ public class ModificarBibliografia extends javax.swing.JFrame {
     private javax.swing.JTextField txtFrecuenciaModificar;
     private javax.swing.JTextField txtPalabraClaveModificar;
     private javax.swing.JTextField txtTemasModificar;
+    private javax.swing.JTextField txtTipoActualModificarBiblio;
     private javax.swing.JTextField txtTituloModificar;
     // End of variables declaration//GEN-END:variables
 }
